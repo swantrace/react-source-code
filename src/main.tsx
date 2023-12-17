@@ -1,8 +1,18 @@
 import React from "./react";
-// import ReactDOM from "react-dom/client";
+import ReactDOM from "./react-dom";
 
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-const header = <h1>Hello Simple React</h1>;
+const header = (
+  <h1
+    style={{ color: "red" }}
+    className="test-class-1 test-class-2"
+    onClick={() => {
+      console.log("Hello World");
+    }}
+    data-test="test"
+  >
+    Hello Simple React
+  </h1>
+);
 const paragraph = <p>This is a simple React app with a single component.</p>;
 const element = (
   <div>
@@ -11,9 +21,4 @@ const element = (
   </div>
 );
 
-const testElement = React.createElement("div", null, header, paragraph);
-console.log(header);
-console.log(paragraph);
-console.log(element);
-console.log(testElement);
-// root.render(element);
+ReactDOM.render(element, document.getElementById("root"));
